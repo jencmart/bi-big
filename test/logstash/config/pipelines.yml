@@ -1,0 +1,2 @@
+- pipeline.id: logovaci-pipeline
+  path.config: /usr/share/logstash/pipeline

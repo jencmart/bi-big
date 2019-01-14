@@ -1,0 +1,5 @@
+hadoop:
+    image: sequenceiq/hadoop-docker
+    container_name: hadoop-hdfs
+    volumes:
+      - ./datasets:/opt/datasets

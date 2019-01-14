@@ -1,0 +1,19 @@
+
+# konfigurace filebeatu
+# soubor s daty ktere filebeat bude nacitat
+# pro tyto data musime v elasticu nastavit konfiguraci
+# a to 1. pipeline a 2. template
+# pipeline nevim presne co je - asi neco kvuli filebeatu
+# v template je mapping
+filebeat.prospectors:
+- type: log
+  paths:
+   - /usr/share/filebeat/*.csv
+
+# output elasticsearch ... hmmm nevim co to znamena, ale host musi byt elasticsearch, resp. bych tam asi mohl napsat jeho IP
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+  index: nyc_visionzero
+  pipeline: nyc_collision
+
+setup.template.enabled: false
